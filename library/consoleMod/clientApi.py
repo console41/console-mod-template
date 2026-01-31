@@ -2,8 +2,23 @@
 import mod.client.extraClientApi as clientApi
 
 from .config.configUtils import *
-from .system.client.client import Main
+from .system.client.client import Main, initFunc, updateFunc, destroyFunc
 from .system.ui.main import BaseScreenNode
+
+
+def SystemInit(func):
+    initFunc.append(func)
+    return func
+
+
+def SystemUpdate(func):
+    updateFunc.append(func)
+    return func
+
+
+def SystemDestroy(func):
+    destroyFunc.append(func)
+    return func
 
 
 def RegisterConsoleModClient():

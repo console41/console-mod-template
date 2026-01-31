@@ -2,7 +2,22 @@
 import mod.server.extraServerApi as serverApi
 
 from .config.configUtils import *
-from .system.server.server import Main
+from .system.server.server import Main, initFunc, updateFunc, destroyFunc
+
+
+def SystemInit(func):
+    initFunc.append(func)
+    return func
+
+
+def SystemUpdate(func):
+    updateFunc.append(func)
+    return func
+
+
+def SystemDestroy(func):
+    destroyFunc.append(func)
+    return func
 
 
 def RegisterConsoleModServer():
