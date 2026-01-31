@@ -3,6 +3,7 @@ import mod.client.extraClientApi as clientApi
 
 from .config.configUtils import *
 from .system.client.client import Main
+from .system.ui.main import BaseScreenNode
 
 
 def RegisterConsoleModClient():
