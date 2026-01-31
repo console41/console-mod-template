@@ -52,6 +52,8 @@ class BaseScreenNode(screenNode):
             func()
 
     def Update(self):
+        if BaseScreenNode is None:
+            return
         super(BaseScreenNode, self).Update()
         for func in self._updateFunc:
             func()
