@@ -5,12 +5,23 @@ screenNode = clientApi.GetScreenNodeCls()
 
 
 class BaseScreenNode(screenNode):
+    _initFunc = []
     _createFunc = []  # UI创建时需调用的函数
     _updateFunc = []
     _destroyFunc = []
 
     def __init__(self, namespace, name, param):
         super(BaseScreenNode, self).__init__(namespace, name, param)
+        for func in self._initFunc:
+            func(namespace, name, param)
+
+    @classmethod
+    def UIInit(cls, func):
+        if not hasattr(cls, '_initFunc') or cls._initFunc is BaseScreenNode._initFunc:
+            # 为当前子类动态创建一个空列表
+            cls._initFunc = []
+        cls._initFunc.append(func)
+        return func
 
     @classmethod
     def UICreate(cls, func):
