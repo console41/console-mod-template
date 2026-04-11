@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from ...config.configUtils import *
-from ...library.consoleMod.config.configUtils import CONSOLE_MOD_MOD_NAME, CONSOLE_MOD_CLIENT_SYSTEM_NAME, CONSOLE_MOD_SERVER_SYSTEM_NAME
+from ...library.consoleMod.config.configUtils import CLIENT_SYSTEM_NAME, SERVER_SYSTEM_NAME
 from ...constant.serverConstant import *
 from ...library.consoleMod.serverApi import Listen
 
-serverSystem = serverApi.GetSystem(CONSOLE_MOD_MOD_NAME, CONSOLE_MOD_SERVER_SYSTEM_NAME)
+serverSystem = serverApi.GetSystem(MOD_NAME, SERVER_SYSTEM_NAME)
 
 NotifyToClient = serverSystem.NotifyToClient
 NotifyToMultiClients = serverSystem.NotifyToMultiClients

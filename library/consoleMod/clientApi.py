@@ -23,13 +23,13 @@ def SystemDestroy(func):
 
 def RegisterConsoleModClient():
     from ...config.configUtils import DIR_ROOT as BASE_DIR_ROOT
-    return clientApi.RegisterSystem(CONSOLE_MOD_MOD_NAME, CONSOLE_MOD_CLIENT_SYSTEM_NAME,
+    return clientApi.RegisterSystem(MOD_NAME, CLIENT_SYSTEM_NAME,
                                     BASE_DIR_ROOT + '.library.consoleMod.system.client.client.Main')
 
 
 def Listen(funcOrStr=None, namespace=clientApi.GetEngineNamespace(), systemName=clientApi.GetEngineSystemName(),
            priority=0):
-    clientSystem = clientApi.GetSystem(CONSOLE_MOD_MOD_NAME, CONSOLE_MOD_CLIENT_SYSTEM_NAME)  # type: Main
+    clientSystem = clientApi.GetSystem(MOD_NAME, CLIENT_SYSTEM_NAME)  # type: Main
 
     def wrapper(func):
         clientSystem.eventList.append(
