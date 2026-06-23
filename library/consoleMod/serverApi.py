@@ -2,12 +2,7 @@
 import mod.server.extraServerApi as serverApi
 
 from .config.configUtils import *
-from .system.server.server import Main, initFunc, updateFunc, destroyFunc
-
-
-def SystemInit(func):
-    initFunc.append(func)
-    return func
+from .system.server.server import Main, updateFunc, destroyFunc
 
 
 def SystemUpdate(func):

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from ...constant.clientConstant import *
 
-initFunc = []
 updateFunc = []
 destroyFunc = []
 
@@ -10,8 +9,6 @@ class Main(clientApi.GetClientSystemCls()):
     def __init__(self, namespace, systemName):
         super(Main, self).__init__(namespace, systemName)
         self.eventList = []
-        for func in initFunc:
-            func()
 
     @staticmethod
     def Update():
